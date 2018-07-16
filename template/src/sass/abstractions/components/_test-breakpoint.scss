@@ -1,0 +1,5 @@
+%bp-foo {
+  @include breakpoint(300px) {
+    width: 100%;
+  }
+}

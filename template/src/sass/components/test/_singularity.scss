@@ -1,0 +1,15 @@
+@include add-grid(12);
+@include add-gutter(1/3);
+@include add-gutter-style('split');
+
+.sg-container {
+  @extend %grid-container;
+}
+
+.sg-foo {
+  @include grid-span(8, 0);
+}
+
+.sg-bar {
+  @include grid-span(4, 9);
+}

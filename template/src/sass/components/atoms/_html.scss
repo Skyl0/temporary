@@ -1,0 +1,4 @@
+// Set the base font-size, but keep an option for the user to adjust it to their needs.
+html {
+  font-size: $font-size-default / 16px * 100%;
+}

@@ -1,0 +1,28 @@
+// Primary palette
+$color-gray: #808080;
+$color-dodger-blue: #2196F3;
+
+// Secondary palette
+$color-silver: #c7c7c7;
+
+// Gray palette
+$color-black: #000;
+$color-white: #fff;
+
+// use-cases
+$color-main: $color-dodger-blue;
+
+// - typo
+$color-copy: $color-dodger-blue;
+$color-copy-inactive: $color-silver;
+$color-copy-inverted: $color-white;
+$color-link: $color-main;
+
+// - body
+$color-body: $color-white;
+
+// - borders
+$color-border-default: $color-silver;
+
+// - misc
+$color-shadow: $color-black;

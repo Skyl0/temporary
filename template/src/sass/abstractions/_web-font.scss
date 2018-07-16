@@ -1,0 +1,17 @@
+$font-path: '../font/' !default;
+
+@mixin webfont($name, $file, $weight: normal, $style: normal, $path: $font-path) {
+  $file-path: '#{$path}#{$file}';
+
+  @font-face {
+    // sass-lint:disable no-duplicate-properties, indentation
+    font-family: $name;
+    src: url('#{$file-path}.eot');
+    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+      url('#{$file-path}.woff') format('woff'),
+      url('#{$file-path}.ttf') format('truetype'),
+      url('#{$file-path}.svg#{$name}') format('svg');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}

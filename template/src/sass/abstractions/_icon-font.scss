@@ -1,0 +1,31 @@
+$icon-font-family: 'icon-font' !default;
+$icon-font-trivials: () !default;
+
+%icon-font {
+  // sass-lint:disable no-vendor-prefixes
+  text-transform: none;
+  font-weight: normal; // ensures no half-pixel rendering in firefox
+  font-style: normal;
+  font-variant: normal;
+  font-family: $icon-font-family;
+  line-height: 1;
+  transform: translate(0, 0);
+  speak: none;
+
+  // Better Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin icon-content($name, $iconset: $icon-font-trivials) {
+  @if map-has-key($iconset, $name) == true {
+    content: map-get($iconset, $name);
+  } @else {
+    @error 'no icon for trivial "#{$name}" found';
+  }
+}
+
+@mixin icon($name) {
+  @extend %icon-font;
+  @include icon-content($name);
+}

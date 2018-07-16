@@ -1,0 +1,65 @@
+@function get-all-sprites($sheet) {
+  @return map-get($sheet, 'sprites');
+}
+
+@function get-first-sprite($sheet) {
+  @return nth(map-keys(get-all-sprites($sheet)), 1);
+}
+
+@function get-sprite($sheet, $sprite-name) {
+  @return map-get(get-all-sprites($sheet), $sprite-name);
+}
+
+@function sprite-image($sheet) {
+  @return map-get($sheet, 'image');
+}
+
+@function sprite-width($sprite) {
+  @return map-get($sprite, 'width');
+}
+
+@function sprite-height($sprite) {
+  @return map-get($sprite, 'height');
+}
+
+@function sprite-offset($sprite) {
+  @return map-get($sprite, 'offset-x') map-get($sprite, 'offset-y');
+}
+
+@function sheet-image($sheet) {
+  $img: map-get($sheet, 'image');
+
+  @if (function-exists('image-url')) {
+    @return image-url($img);
+  } @else {
+    @return url($img);
+  }
+}
+
+@mixin sprite-size($sheet, $sprite-name) {
+  $sprite: get-sprite($sheet, $sprite-name);
+
+  width: sprite-width($sprite);
+  height: sprite-height($sprite);
+}
+
+@mixin sprite($sheet, $sprite-name: false) {
+  $sprite: false;
+  @if (not $sprite-name) {
+    $sprite-name: get-first-sprite($sheet);
+  }
+
+  @if type-of($sheet) == 'map' {
+    $sprite: $sheet;
+  } @else {
+    $sprite: get-sprite($sheet, $sprite-name);
+  }
+
+  @if $sprite {
+    background: sheet-image($sheet) sprite-offset($sprite);
+    width: sprite-width($sprite);
+    height: sprite-height($sprite);
+  } @else {
+    @warn 'No sprite found!';
+  }
+}

@@ -1,0 +1,11 @@
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+$page-width-max: 1200px;
+$page-side-spacing: 20px;
+
+$spacing-default: 30px;
+$spacing-outer: 60px;
+$spacing-minor: 15px;
+$spacing-small: 6px;

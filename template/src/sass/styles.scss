@@ -1,0 +1,10 @@
+// import via gulp-sass includePaths
+@import 'breakpoint';
+@import 'singularitygs';
+@import 'singularitygs/css-grid';
+
+// regular imports
+@import 'variables/**/*';
+@import 'abstractions/**/*';
+@import 'base/*';
+@import 'components/**/*';

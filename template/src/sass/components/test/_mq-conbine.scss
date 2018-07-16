@@ -1,0 +1,17 @@
+$break: 600px;
+
+.mq-foo {
+  @media screen and (min-width: $break) {
+    color: $color-main;
+  }
+}
+
+.mq-bar {
+  @media screen and (min-width: $break) {
+    color: $color-black;
+  }
+
+  @media (min-width: $break) {
+    color: $color-black;
+  }
+}

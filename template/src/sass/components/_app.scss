@@ -1,0 +1,13 @@
+.App {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  .Header {
+    flex: 0;
+  }
+
+  .Main {
+    flex: 1 1 auto;
+  }
+}

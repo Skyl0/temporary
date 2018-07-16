@@ -1,0 +1,30 @@
+{
+// Default options
+'functions': false,
+'variableNameTransforms': ['dasherize']
+}
+
+{{#extend "scss"}}
+{{#content "sprites"}}
+${{spritesheet_info.strings.name_sprites}}: (
+{{#each sprites}}
+  '{{strings.name}}': (
+    width: {{px.width}},
+    height: {{px.height}},
+    {{!-- x: {{px.x}}, y: {{px.y}}, --}}
+    offset-x: {{px.offset_x}},
+    offset-y: {{px.offset_y}}
+  ),
+{{/each}}
+);
+{{/content}}
+
+{{#content "spritesheet"}}
+${{spritesheet_info.strings.name}}: (
+  width: {{spritesheet.px.width}},
+  height: {{spritesheet.px.height}},
+  image: '{{spritesheet.escaped_image}}',
+  sprites: ${{spritesheet_info.strings.name_sprites}}
+);
+{{/content}}
+{{/extend}}

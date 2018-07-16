@@ -1,0 +1,15 @@
+.sprite-test {
+  $sheet: $sp-avatars;
+
+  .avatar {
+    &::after {
+      @include sprite($sheet);
+    }
+
+    @each $avatar, $data in map-get($sheet, 'sprites') {
+      &.avatar--#{$avatar} {
+        background-position: sprite-offset($data);
+      }
+    }
+  }
+}

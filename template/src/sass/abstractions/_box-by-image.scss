@@ -1,0 +1,16 @@
+@mixin box-by-image($image, $size-from-image: false) {
+  @if (function-exists('image-url')) {
+    background-image: image-url($image);
+    @if $size-from-image {
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: image-width($size-from-image);
+      height: image-height($size-from-image);
+    } @else {
+      width: image-width($image);
+      height: image-height($image);
+    }
+  } @else {
+    @warn 'gulp plugin "gulp-compass-imagehelper" missing';
+  }
+}

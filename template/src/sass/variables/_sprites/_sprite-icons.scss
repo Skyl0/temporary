@@ -1,0 +1,51 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$sp-icons-sprites: (
+  'american-express': (
+    width: 512px,
+    height: 366px,
+    offset-x: 0px,
+    offset-y: 0px
+  ),
+  'bitcoin': (
+    width: 512px,
+    height: 366px,
+    offset-x: -512px,
+    offset-y: 0px
+  ),
+  'maestro': (
+    width: 512px,
+    height: 366px,
+    offset-x: 0px,
+    offset-y: -366px
+  ),
+  'paypal': (
+    width: 512px,
+    height: 366px,
+    offset-x: -512px,
+    offset-y: -366px
+  ),
+  'visa': (
+    width: 512px,
+    height: 366px,
+    offset-x: -1024px,
+    offset-y: 0px
+  ),
+);
+$sp-icons: (
+  width: 1536px,
+  height: 732px,
+  image: 'icons.png',
+  sprites: $sp-icons-sprites
+);
+
+

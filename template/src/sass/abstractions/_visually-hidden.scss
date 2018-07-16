@@ -1,0 +1,24 @@
+// hidden from view but accessible to screen-readers
+%visually-hidden {
+  position: absolute;
+  top: auto;
+  left: -9999em;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+
+  // The .focusable class extends the .visually-hidden class to allow
+  // the element to be focusable when navigated to via the keyboard.
+  &.focusable {
+    &:active,
+    &:focus {
+      position: static;
+      overflow: visible;
+      clip: auto;
+      width: auto;
+      height: auto;
+    }
+  }
+}
