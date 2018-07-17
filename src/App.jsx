@@ -1,13 +1,24 @@
 import React, {Component} from 'react';
-import {Route, Link} from 'react-router-dom';
 
-// Services
+// Components / Services
 import {injector} from 'react-services-injector';
 import services from './services';
 import Header from "./components/Header";
 import Main from "./components/Main";
 
+// Theme
+import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
+import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
+
 injector.register(services);
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#2196F3'
+    }
+  }
+});
 
 export default class App extends Component {
 
@@ -26,9 +37,11 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header title={this.state.title}/>
-        <Main/>
+      <div className="app-root">
+        <MuiThemeProvider theme={theme}>
+          <Header title={this.state.title}/>
+          <Main/>
+        </MuiThemeProvider>
       </div>
     );
   }

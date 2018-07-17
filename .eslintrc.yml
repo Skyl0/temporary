@@ -219,6 +219,7 @@ rules:
     sort-imports: error
     sort-keys: off
     sort-vars: off
+    source-type: module
     space-before-blocks: error
     space-before-function-paren: off
     space-in-parens:

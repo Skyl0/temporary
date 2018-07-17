@@ -14,7 +14,7 @@ export default class Main extends Component {
 
   render() {
     return (
-      <div className="Main">
+      <div className="main">
         <Route exact path="/" component={HomeComponent}/>
         <Route path="/login" component={LoginComponent}/>
         <Route path="/export/single" component={SingleExportComponent}/>

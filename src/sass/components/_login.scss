@@ -1,6 +1,9 @@
 .paper {
   max-width: 800px;
-  min-height: 400px;
-  padding:
-  margin: 20px auto;
+  padding: 20px;
+  margin: 40px auto 20px;
+}
+
+.paper.paper-login {
+  max-width: 400px;
 }

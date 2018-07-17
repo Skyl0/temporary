@@ -60,16 +60,23 @@
 
 .paper {
   max-width: 800px;
-  min-height: 400px;
-  margin: 20px auto;
+  padding: 20px;
+  margin: 40px auto 20px;
 }
 
-.Main {
-  background-color: #808080;
+.paper.paper-login {
+  max-width: 400px;
+}
+
+.paper::before {
+  content: '';
+  width: 95%;
+  position: absolute;
+  top: -3px;
 }
 
 body {
-  background-color: #fff;
+  background-color: #EEE;
   color: #2196F3;
   font-family: "OpenSans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
