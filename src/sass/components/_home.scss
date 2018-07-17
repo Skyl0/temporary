@@ -1,0 +1,28 @@
+.home-component {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 50px;
+
+  .export-single,
+  .export-multiple {
+
+    display: inline-block;
+    position: relative;
+
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    background-color: $color-silver;
+    color: $color-white;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+
+    span {
+      position: absolute;
+      bottom: 10px;
+      // left: 10px;
+    }
+  }
+}

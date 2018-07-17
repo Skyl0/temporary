@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 // Material
 import AppBar from '@material-ui/core/AppBar';
@@ -14,7 +14,7 @@ export default class Header extends Component {
         <AppBar position="static">
           <Toolbar>
             <Typography variant="title" color="inherit">
-              {this.props.title}
+              <Link to="/">{this.props.title}</Link>
             </Typography>
           </Toolbar>
         </AppBar>
